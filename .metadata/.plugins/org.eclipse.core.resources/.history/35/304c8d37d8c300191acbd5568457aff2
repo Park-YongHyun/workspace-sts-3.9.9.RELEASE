@@ -1,0 +1,31 @@
+package com.sts.web;
+
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.sts.vo.MavVO;
+
+@Controller
+public class MAVController {
+	
+	@RequestMapping(value = "/mav_select.do", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		List<String> selectItem = new List<String>();
+		selectItem.add("java");
+		selectItem.add("c");
+		selectItem.add("nodejs");
+		selectItem.add("react");
+		selectItem.add("oracle");
+		
+		model.addAllAttributes("vo", new MavVO());
+		
+		return "mav_select";
+	}
+}

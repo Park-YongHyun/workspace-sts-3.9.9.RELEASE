@@ -1,0 +1,20 @@
+package com.sts.vo;
+
+public class MavVO {
+	private String id = null;
+	private String lang = null;
+	
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getLang() {
+		return lang;
+	}
+	public void setLang(String lang) {
+		this.lang = lang;
+	}
+}

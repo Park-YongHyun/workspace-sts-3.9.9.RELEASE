@@ -1,0 +1,6 @@
+package com.sts.vo;
+
+public class MavVO {
+	private String id = null;
+	private String lang = null;
+}
