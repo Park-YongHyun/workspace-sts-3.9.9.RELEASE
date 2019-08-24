@@ -1,0 +1,9 @@
+package com.sts.vo;
+
+public class ShopItemVO {
+	private int itm_no;
+	private String itm_name;
+	private String itm_content;
+	private int itm_price;
+	private int itm_qty;
+}

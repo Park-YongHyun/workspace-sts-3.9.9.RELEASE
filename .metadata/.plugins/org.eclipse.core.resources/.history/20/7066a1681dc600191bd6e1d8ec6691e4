@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>tmp1-1</title>
+	<script src="${pageContext.request.contextPath}/resources/js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	<input id="front" type="text" /><br />
+	<input id="back" type="text" /><br />
+	
+	<button onclick="btnchck();">답 보기</button>
+	<button onclick="btn1();">O</button>
+	<button onclick="btn2();">?</button>
+	<button onclick="btn3();">X</button>
+	<button onclick="btnnext();">다음</button>
+	
+	<script>
+		var data;
+		var rand;
+		$(function(){ // 데이터 베이스 가져오기
+			$.get('http://127.0.0.1:3000/tmp1/1', function(retdata){
+				data = retdata;
+				btnnext();
+			},'json');
+		});
+
+		function btnchck() {
+			chck();
+		}
+		function btn1() {
+			chck();
+			next();
+			$.post( "example.php?Name=ajax&Age=10", {
+			    a: '1',
+			    b: '2'
+			}
+		}
+		function btn2() {
+			chck();
+			next();
+		}
+		function btn3() {
+			chck();
+			next();
+		}
+		function btnnext() {
+			next();
+		}
+
+		function chck() {
+			$('#back').val(data[rand][3]); // 답 보기
+			data.splice(rand,1); // 카드 제거
+		}
+		function next() {
+			var len = data.length;
+			if(len === 0){
+				location.replace("${pageContext.request.contextPath}"); // 카드가 없으면 특정 페이지로 이동
+				return
+			}
+			rand = Math.floor(Math.random() * len); // 랜덤
+			$('#front').val(data[rand][2]); // 다음 카드
+			$('#back').val("");
+		}
+		
+	</script>
+</body>
+</html>

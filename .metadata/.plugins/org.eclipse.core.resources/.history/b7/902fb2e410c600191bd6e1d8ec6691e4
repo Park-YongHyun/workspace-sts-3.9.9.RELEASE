@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+	<security:http use-expressions="true">
+		<!-- 접근할수 없는 페이지 설정 -->
+		<security:access-denied-handler
+			error-page="/error403.do" />
+
+		<!-- 접근 설정 -->
+		<security:intercept-url pattern="/admin/**"
+			access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/teacher/**"
+			access="hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')" />
+		<security:intercept-url pattern="/student/**"
+			access="isAuthenticated()" />
+		<security:intercept-url pattern="/**"
+			access="permitAll" />
+
+		<!-- 로그인 처리 -->
+		<security:form-login login-page="/login1.do"
+			login-processing-url="/login2.do"
+			authentication-failure-url="/login1.do?error" username-parameter="id"
+			password-parameter="pw" />
+
+		<!-- 로그 아웃 처리 -->
+		<security:logout logout-url="/logout1.do"
+			logout-success-url="/main1.do" />
+	</security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+		
+			<!-- 수동으로 회원 등록할 경우
+			<security:user-service>
+				<security:user name="admin" password="1234" authorities="ROLE_ADMIN" />
+				<security:user name="teacher" password="1234" authorities="ROLE_TEACHER" />
+			</security:user-service> -->
+			
+			<security:jdbc-user-service data-source-ref="dataSource"
+			users-by-username-query="SELECT id AS userName, pw AS password, enabled FROM MEMBER1 WHERE id=?"
+			authorities-by-username-query="SELECT id AS userName, authority FROM MEMBER1 WHERE id=?"/>
+			
+		</security:authentication-provider>
+	</security:authentication-manager>
+</beans>

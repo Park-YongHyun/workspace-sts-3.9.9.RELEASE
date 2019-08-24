@@ -1,7 +1,6 @@
 package com.sts.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -15,7 +14,7 @@ public class tmp1DAO implements tmp1Service{
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<Map<String, Object>> selectWordList() {
+	public List<Object> selectWordList() {
 		return sqlSession.selectList("Shop_Member.selectMemberList");
 	}
 

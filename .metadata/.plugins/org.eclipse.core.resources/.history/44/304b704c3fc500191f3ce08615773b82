@@ -1,0 +1,21 @@
+package com.sts.dao;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class Shop_ItemDAO implements Shop_ItemService{
+
+	@Autowired
+	@Resource(name="sqlSession")
+	public SqlSession sqlSession;
+	
+	@Override
+	public int selectItemNo() {
+		return sqlSession.selectOne("Shop_Item.selectItemNo");
+	}
+	
+}

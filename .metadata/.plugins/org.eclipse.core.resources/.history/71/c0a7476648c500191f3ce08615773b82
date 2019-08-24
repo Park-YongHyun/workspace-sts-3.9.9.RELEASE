@@ -1,0 +1,30 @@
+package com.sts.dao;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sts.vo.ShopItemVO;
+
+@Service
+public class Shop_ItemDAO implements Shop_ItemService{
+
+	@Autowired
+	@Resource(name="sqlSession")
+	public SqlSession sqlSession;
+	
+	@Override
+	public int selectItemNo() {
+		return sqlSession.selectOne("Shop_Item.selectItemNo");
+	}
+
+	@Override
+	public int insertItemBatch(List<ShopItemVO> list) {
+		return sqlSession.insert("Shop_Item.insertItemBatch", list);
+	}
+	
+}
