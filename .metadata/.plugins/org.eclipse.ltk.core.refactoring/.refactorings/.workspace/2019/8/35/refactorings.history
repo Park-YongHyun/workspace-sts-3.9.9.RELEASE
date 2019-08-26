@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 0 elements to &apos;ProjectRemembrance/src/main/java/com.project.tmp1&apos;&#x0D;&#x0A;- Destination element: &apos;ProjectRemembrance/src/main/java/com.project.tmp1&apos;" description="Copy compilation units" destination="=ProjectRemembrance/src\/main\/java&lt;com.project.tmp1" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1566815958372" units="0" version="1.0"/>
+</session>

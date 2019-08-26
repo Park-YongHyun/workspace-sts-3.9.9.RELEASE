@@ -114,7 +114,7 @@
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="org.springsource.ide.eclipse.commons.quicksearch.ui.QuickSearchDialog.DIALOG_SETTINGS">
-		<item key="LAST_QUERY" value="login2"/>
+		<item key="LAST_QUERY" value="tmp1"/>
 		<item key="PATH_FILTER" value=""/>
 		<item key="CASE_SENSITIVE" value="true"/>
 		<item key="KEEP_OPEN" value="false"/>
@@ -128,11 +128,11 @@
 			<item value="166"/>
 		</list>
 		<section name="DialogBoundsSettings">
-			<item key="DIALOG_HEIGHT" value="500"/>
-			<item key="DIALOG_WIDTH" value="600"/>
-			<item key="DIALOG_X_ORIGIN" value="669"/>
-			<item key="DIALOG_Y_ORIGIN" value="191"/>
-			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+			<item key="DIALOG_HEIGHT" value="556"/>
+			<item key="DIALOG_WIDTH" value="613"/>
+			<item key="DIALOG_X_ORIGIN" value="945"/>
+			<item key="DIALOG_Y_ORIGIN" value="173"/>
+			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 		</section>
 	</section>
 </section>

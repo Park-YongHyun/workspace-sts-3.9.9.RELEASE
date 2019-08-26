@@ -1,0 +1,9 @@
+package com.sts.vo;
+
+public class tmp1VO {
+	int q_no;
+	String q_id;
+	String q_front;
+	String q_back;
+	int q_hit;
+}
