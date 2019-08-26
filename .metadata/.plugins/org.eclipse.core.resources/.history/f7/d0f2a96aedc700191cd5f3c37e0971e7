@@ -1,9 +1,0 @@
-package com.sts.dao;
-
-import java.util.List;
-
-import com.sts.web.WordVO;
-
-public interface Tmp1Service {
-	public List<WordVO> selectWordList();
-}

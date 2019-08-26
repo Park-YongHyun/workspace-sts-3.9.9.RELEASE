@@ -1,7 +1,0 @@
-package com.project.tmp1;
-
-import java.util.List;
-
-public interface Tmp1Service {
-	public List<WordVO> selectWordList();
-}
